@@ -20,7 +20,7 @@ namespace Entity
 		glVertexPointer(2, GL_FLOAT, 0, quad);
 		glEnableClientState(GL_VERTEX_ARRAY);
         
-		GLfloat quadUVs[] = {0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0};
+		GLfloat quadUVs[] = {0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f};
 		glTexCoordPointer(2, GL_FLOAT, 0, quadUVs);
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
         
