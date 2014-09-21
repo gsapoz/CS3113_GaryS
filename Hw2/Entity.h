@@ -5,9 +5,9 @@
 #include <SDL_opengl.h>
 #include <SDL_image.h>
 
-namespace Entity
+namespace Entities
 {
-	class Entity { //put in header (entity.h, entity.cpp)
+	class Entity { 
 	public:
 		void Draw();
 		void SetSize(float height, float width);

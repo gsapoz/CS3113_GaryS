@@ -4,7 +4,7 @@
 #include "Entity.h"
 using namespace std;
 
-namespace Entity
+namespace Entities
 {
 	void Entity::Draw()
 	{
