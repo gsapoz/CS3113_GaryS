@@ -7,8 +7,11 @@ using namespace Entities;
 
 SDL_Window* displayWindow;
 
+//score won't be shown, but will be detected
 bool I_Scored = true; //Player 1 scored. Else, player 2 scored! 
-int Score = 0; //score won't be shown, but will be kept, to determine a winner
+int myScore = 0; 
+int aiScore = 0; 
+
 Entity myPaddle; //player 1 paddle
 Entity aiPaddle; //player 2 paddle
 Entity ball;  //pong ball
@@ -138,6 +141,25 @@ void Render() {
 	myPaddle.Draw();
 	aiPaddle.Draw();
 	
+	if(ball.x > 1.33)
+	{ 
+		++myScore;
+		ball.x = 0.0f;
+		ball.y = 0.0f;
+		ball.dir_x = 0.0f;
+		ball.dir_y = 0.0f;
+		I_Scored = true;
+	}
+	else if(ball.x < -1.33)
+	{
+		++aiScore;
+		ball.x = 0.0f;
+		ball.y = 0.0f;
+		ball.dir_x = 0.0f;
+		ball.dir_y = 0.0f;
+		I_Scored = false;
+	}
+		
 	SDL_GL_SwapWindow(displayWindow);
 }
 
