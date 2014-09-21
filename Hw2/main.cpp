@@ -33,14 +33,14 @@ GLuint LoadTexture(const char* image_path, GLenum image_format = GL_BGRA) {
 
 void Setup() {
 	//Function Acquired in Lecture Notes
-    SDL_Init(SDL_INIT_VIDEO);
+	SDL_Init(SDL_INIT_VIDEO);
 	displayWindow = SDL_CreateWindow("Pong!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
 	SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
 	SDL_GL_MakeCurrent(displayWindow, context);
     
-    glViewport(0, 0, 800, 600);
-    glMatrixMode(GL_PROJECTION);
-    glOrtho(-1.33, 1.33, -1.0, 1.0, -1.0, 1.0);
+	glViewport(0, 0, 800, 600);
+	glMatrixMode(GL_PROJECTION);
+	glOrtho(-1.33, 1.33, -1.0, 1.0, -1.0, 1.0);
 }
 
 bool ProcessEvents() {
@@ -129,14 +129,13 @@ void Update(float elapsed) {
 
 void Render() {
 	//function from class lecture 
-    glClearColor(0.4f, 0.5f, 0.4f, 1.0f);
+	glClearColor(0.4f, 0.5f, 0.4f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 	
 	//render entities
 	ball.Draw();
 	myPaddle.Draw();
 	aiPaddle.Draw();
-
 	
 	SDL_GL_SwapWindow(displayWindow);
 }
