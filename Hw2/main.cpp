@@ -154,8 +154,8 @@ int main(int argc, char *argv[])
 	aiPaddle.textureID = LoadTexture("paddleRed.png");
 
 	ball.SetSize(0.1f, 0.1f);
-	myPaddle.SetSize(0.1f, 0.40f);
-	aiPaddle.SetSize(0.1f, 0.40f);
+	myPaddle.SetSize(0.1f, 0.35f);
+	aiPaddle.SetSize(0.1f, 0.35f);
 
 	myPaddle.x = -1.0;
 	aiPaddle.x = 1.0;
