@@ -7,7 +7,7 @@ using namespace Entities;
 
 SDL_Window* displayWindow;
 
-bool Scored = true; //Player 1 scored. Else, player 2 scored! 
+bool I_Scored = true; //Player 1 scored. Else, player 2 scored! 
 int Score = 0; //score won't be shown, but will be kept, to determine a winner
 Entity myPaddle; //player 1 paddle
 Entity aiPaddle; //player 2 paddle
@@ -66,7 +66,7 @@ bool ProcessEvents() {
 	//Winner gets ball! 
 	if(ball.x == 0.0f && ball.y == 0.0f && ball.dir_x == 0.0f && ball.dir_y == 0.0f)
 	{
-		if(Scored) ball.dir_x = 1.0f;
+		if(I_Scored) ball.dir_x = 1.0f;
 		else ball.dir_x = -1.0f;
 	} 
 
@@ -82,9 +82,9 @@ bool ProcessEvents() {
 	float myPaddleBottom = -(myPaddle.y + myPaddle.height/2);
 	//player 2 paddle dimensions
 	float aiPaddleRight = aiPaddle.x + aiPaddle.width / 2;
-	float aiPaddleLeft = -(aiPaddle.x + aiPaddle.width / 2);
+	float aiPaddleLeft = -(aiPaddle.x + aiPaddle.width /2);
 	float aiPaddleTop = aiPaddle.y + aiPaddle.height /2;
-	float aiPaddleBottom = -(aiPaddle.y + aiPaddle.height/2);
+	float aiPaddleBottom = -(aiPaddle.y + aiPaddle.height /2);
 
 	//Detect Collisions
 	if((ballTop >= 1.0f) || (ballBottom <= -1.0f))
@@ -165,6 +165,8 @@ int main(int argc, char *argv[])
 		float ticks = (float)SDL_GetTicks() / 1000.0f;
 		float elapsed = ticks - lastFrameTicks;
 		lastFrameTicks = ticks;
+
+		Update(elapsed);
 		Render(); 
 	}
 
