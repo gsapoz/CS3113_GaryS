@@ -4,7 +4,6 @@
 namespace Entities
 {
 	struct Entity { 
-	public:
 		void Draw();
 		void SetSize(float height, float width);
     

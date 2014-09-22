@@ -3,6 +3,7 @@
 #include <SDL_image.h>
 #include "Entity.h" //Framework for Entity class. 
 #include<math.h>
+
 using namespace Entities;
 
 SDL_Window* displayWindow;
@@ -15,16 +16,17 @@ int aiScore = 0;
 Entity myPaddle; //player 1 paddle
 Entity aiPaddle; //player 2 paddle
 Entity ball;  //pong ball
+GLuint textureID;
 
-GLuint LoadTexture(const char* image_path, GLenum image_format = GL_BGRA) {
+GLuint LoadTexture(const char* image_path) {  //GLenum image_format = GL_BGRA
     //Function Acquired in Lecture Notes
 	SDL_Surface *surface = IMG_Load(image_path);
     
-	GLuint textureID;
+	//GLuint textureID;
 	glGenTextures(1, &textureID);
 	glBindTexture(GL_TEXTURE_2D, textureID);
-    
-	glTexImage2D(GL_TEXTURE_2D, 0, 4, surface->w, surface->h, 0, image_format, GL_UNSIGNED_BYTE, surface->pixels);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, 4, surface->w, surface->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, surface->pixels);
     
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
