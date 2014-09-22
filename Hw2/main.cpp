@@ -133,6 +133,7 @@ void Update(float elapsed) {
 
 void Render() {
 	//function from class lecture 
+	glMatrixMode(GL_MODELVIEW);
 	glClearColor(0.4f, 0.5f, 0.4f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 	
