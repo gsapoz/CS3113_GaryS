@@ -8,7 +8,32 @@
 
 #ifndef __SpaceInvaders__Bullets__
 #define __SpaceInvaders__Bullets__
+#include<SDL2/SDL_opengl.h>
 
-#include <iostream>
+namespace SpaceInvaders{
+    class Bullet{
+    public:
+        void draw();
+        void update();
+        float u;
+        float v;
+        float width;
+        float height;
+        float scale;
+        
+        float x;
+        float y;
+        float speed;
+        
+        GLuint textureID;
+        
+        bool visible;
+        float timeAlive;
+        
+        Bullet(){};
+        Bullet(GLuint textureID, float u, float v, float width, float height, float scale, float x, float y, bool visible)
+		:textureID(textureID), u(u), v(v), width(width), height(height), scale(scale), x(x), y(y), speed(0.4f), visible(visible){};
+    };
+};
 
 #endif /* defined(__SpaceInvaders__Bullets__) */

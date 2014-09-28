@@ -9,8 +9,13 @@
 #include<SDL2/SDL.h>
 #include<SDL2_image/SDL_image.h>
 #include<SDL2/SDL_opengl.h>
+#include "Entity.h"
+#include "Bullets.h"
+using namespace SpaceInvaders;
+
 SDL_Window* displayWindow;
 
+enum GameState { STATE_MAIN_MENU, STATE_GAME_LEVEL, STATE_GAME_OVER };
 int main(int argc, const char * argv[])
 {
 
