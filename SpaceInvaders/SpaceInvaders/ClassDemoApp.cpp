@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Gary. All rights reserved.
 //
 
-#include "ClassDemoApp.h"
+#include "ClassDemoApp.h" 
 
 ClassDemoApp::ClassDemoApp() {
 	Init();
@@ -37,7 +37,7 @@ GLuint ClassDemoApp::LoadTexture(const char *image_path) {
 
 void ClassDemoApp::Init() {
 	SDL_Init(SDL_INIT_VIDEO);
-	displayWindow = SDL_CreateWindow("Spaceman Spiff", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
+	displayWindow = SDL_CreateWindow("Space Invaders", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
 	SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
 	SDL_GL_MakeCurrent(displayWindow, context);
     

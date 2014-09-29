@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062FA30B19D9A9C0007EF927 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062FA30A19D9A9C0007EF927 /* OpenGL.framework */; };
 		0678BF6219D91EF00000CDF9 /* ClassDemoApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0678BF6119D91EF00000CDF9 /* ClassDemoApp.cpp */; };
 		0678BF6519D945580000CDF9 /* SheetSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0678BF6319D945580000CDF9 /* SheetSprite.cpp */; };
 		0678BF6819D946950000CDF9 /* DrawText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0678BF6619D946950000CDF9 /* DrawText.cpp */; };
@@ -31,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		062FA30A19D9A9C0007EF927 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		0652383819D8E1150092F7E9 /* ClassDemoApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDemoApp.h; sourceTree = "<group>"; };
 		0678BF6119D91EF00000CDF9 /* ClassDemoApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClassDemoApp.cpp; sourceTree = "<group>"; };
 		0678BF6319D945580000CDF9 /* SheetSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SheetSprite.cpp; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062FA30B19D9A9C0007EF927 /* OpenGL.framework in Frameworks */,
 				06C12F5219D8A1BD00108FD8 /* SDL2_image.framework in Frameworks */,
 				06C12F5319D8A1BD00108FD8 /* SDL2.framework in Frameworks */,
 			);
@@ -62,6 +65,7 @@
 		06C12F3519D8A05E00108FD8 = {
 			isa = PBXGroup;
 			children = (
+				062FA30A19D9A9C0007EF927 /* OpenGL.framework */,
 				06C12F5019D8A1BD00108FD8 /* SDL2_image.framework */,
 				06C12F5119D8A1BD00108FD8 /* SDL2.framework */,
 				06C12F4019D8A05E00108FD8 /* SpaceInvaders */,
