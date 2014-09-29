@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0678BF6219D91EF00000CDF9 /* ClassDemoApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0678BF6119D91EF00000CDF9 /* ClassDemoApp.cpp */; };
+		0678BF6519D945580000CDF9 /* SheetSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0678BF6319D945580000CDF9 /* SheetSprite.cpp */; };
+		0678BF6819D946950000CDF9 /* DrawText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0678BF6619D946950000CDF9 /* DrawText.cpp */; };
 		06C12F4219D8A05E00108FD8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06C12F4119D8A05E00108FD8 /* main.cpp */; };
 		06C12F4419D8A05E00108FD8 /* SpaceInvaders.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06C12F4319D8A05E00108FD8 /* SpaceInvaders.1 */; };
-		06C12F4C19D8A09400108FD8 /* Bullets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06C12F4A19D8A09400108FD8 /* Bullets.cpp */; };
 		06C12F4F19D8A0B700108FD8 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06C12F4D19D8A0B700108FD8 /* Entity.cpp */; };
 		06C12F5219D8A1BD00108FD8 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C12F5019D8A1BD00108FD8 /* SDL2_image.framework */; };
 		06C12F5319D8A1BD00108FD8 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C12F5119D8A1BD00108FD8 /* SDL2.framework */; };
@@ -29,11 +31,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0652383819D8E1150092F7E9 /* ClassDemoApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDemoApp.h; sourceTree = "<group>"; };
+		0678BF6119D91EF00000CDF9 /* ClassDemoApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClassDemoApp.cpp; sourceTree = "<group>"; };
+		0678BF6319D945580000CDF9 /* SheetSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SheetSprite.cpp; sourceTree = "<group>"; };
+		0678BF6419D945580000CDF9 /* SheetSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetSprite.h; sourceTree = "<group>"; };
+		0678BF6619D946950000CDF9 /* DrawText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawText.cpp; sourceTree = "<group>"; };
+		0678BF6719D946950000CDF9 /* DrawText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawText.h; sourceTree = "<group>"; };
 		06C12F3E19D8A05E00108FD8 /* SpaceInvaders */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SpaceInvaders; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C12F4119D8A05E00108FD8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		06C12F4319D8A05E00108FD8 /* SpaceInvaders.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SpaceInvaders.1; sourceTree = "<group>"; };
-		06C12F4A19D8A09400108FD8 /* Bullets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullets.cpp; sourceTree = "<group>"; };
-		06C12F4B19D8A09400108FD8 /* Bullets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullets.h; sourceTree = "<group>"; };
 		06C12F4D19D8A0B700108FD8 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		06C12F4E19D8A0B700108FD8 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		06C12F5019D8A1BD00108FD8 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
@@ -76,10 +82,14 @@
 			children = (
 				06C12F4119D8A05E00108FD8 /* main.cpp */,
 				06C12F4319D8A05E00108FD8 /* SpaceInvaders.1 */,
-				06C12F4A19D8A09400108FD8 /* Bullets.cpp */,
-				06C12F4B19D8A09400108FD8 /* Bullets.h */,
 				06C12F4D19D8A0B700108FD8 /* Entity.cpp */,
 				06C12F4E19D8A0B700108FD8 /* Entity.h */,
+				0652383819D8E1150092F7E9 /* ClassDemoApp.h */,
+				0678BF6119D91EF00000CDF9 /* ClassDemoApp.cpp */,
+				0678BF6319D945580000CDF9 /* SheetSprite.cpp */,
+				0678BF6419D945580000CDF9 /* SheetSprite.h */,
+				0678BF6619D946950000CDF9 /* DrawText.cpp */,
+				0678BF6719D946950000CDF9 /* DrawText.h */,
 			);
 			path = SpaceInvaders;
 			sourceTree = "<group>";
@@ -135,9 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0678BF6819D946950000CDF9 /* DrawText.cpp in Sources */,
+				0678BF6519D945580000CDF9 /* SheetSprite.cpp in Sources */,
 				06C12F4219D8A05E00108FD8 /* main.cpp in Sources */,
+				0678BF6219D91EF00000CDF9 /* ClassDemoApp.cpp in Sources */,
 				06C12F4F19D8A0B700108FD8 /* Entity.cpp in Sources */,
-				06C12F4C19D8A09400108FD8 /* Bullets.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +267,7 @@
 				06C12F4919D8A05E00108FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
