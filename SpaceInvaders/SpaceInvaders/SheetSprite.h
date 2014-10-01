@@ -19,24 +19,22 @@ struct SheetSprite
 		timeAlive = 0.0;
 	}
 	SheetSprite(unsigned int textureID, float u, float v, float width, float height, float scale, bool isVisible) { }
-    
 	void setAttributes(unsigned int t, float u_, float v_, float w, float h, float s, bool vis, float x_, float y_);
 	void Draw();
 	void setPosition(float xTemp, float yTemp);
     
 	float scale;
-	unsigned int textureID;
 	float u;
 	float v;
 	float width;
 	float height;
-    
 	float x;
 	float y;
 	float direction;
-    
 	float timeAlive;
+    
 	bool isVisible;
+    unsigned int textureID;
 };
 
 #endif /* defined(__SpaceInvaders__SheetSprite__) */

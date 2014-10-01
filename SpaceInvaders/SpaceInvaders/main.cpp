@@ -15,6 +15,7 @@ using namespace std;
 
 SDL_Window* displayWindow;
 
+
 int main(int argc, const char * argv[])
 {
     // insert code here...

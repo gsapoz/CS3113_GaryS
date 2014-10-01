@@ -19,8 +19,8 @@
 
 class ClassDemoApp
 {
-    SheetSprite ship;
-	SheetSprite enemy1;
+    SheetSprite p1;
+	SheetSprite alien;
 	std::vector<SheetSprite> Bullets;
 	std::vector<SheetSprite> AlienBullets;
 	std::vector<SheetSprite> Aliens;

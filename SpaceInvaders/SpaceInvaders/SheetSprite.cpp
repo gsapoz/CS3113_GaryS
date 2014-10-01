@@ -7,6 +7,7 @@
 //
 
 #include "SheetSprite.h"
+
 void SheetSprite::setAttributes(unsigned int t, float u_, float v_, float w, float h, float s, bool vis, float x_, float y_)
 {
 	textureID = t;

@@ -37,7 +37,7 @@ GLuint ClassDemoApp::LoadTexture(const char *image_path)
 	return textureID;
 }
 
-void ClassDemoApp::Init()
+void ClassDemoApp::Init() //Setup function!
 {
 	SDL_Init(SDL_INIT_VIDEO);
 	displayWindow = SDL_CreateWindow("Space Invaders", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
@@ -47,10 +47,13 @@ void ClassDemoApp::Init()
 	glViewport(0, 0, 800, 600);
 	glMatrixMode(GL_PROJECTION);
 	glOrtho(-1.33, 1.33, -1.0, 1.0, -1.0, 1.0);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glTranslatef(0.0,0.0,0.0);
     
 	GLuint spriteSheetTexture = LoadTexture("sheet.png");
     
-	ship.setAttributes(spriteSheetTexture, 346.0f / 1024.0f, 75.0f / 1024.0f, 98.0f / 1024.0f, 75.0f / 1024.0f, 0.7f, true, 0.0f, -0.85f);
+	p1.setAttributes(spriteSheetTexture, 346.0f / 1024.0f, 75.0f / 1024.0f, 98.0f / 1024.0f, 75.0f / 1024.0f, 0.7f, true, 0.0f, -0.85f);
     
 	float xOrigin = -1.2f;
 	float yOrigin = 0.7f;
@@ -69,9 +72,9 @@ void ClassDemoApp::Init()
 	}
     
 	for (int i = 0; i < 10; i++) {
-		SheetSprite laser;
-		laser.setAttributes(spriteSheetTexture, 858.0f / 1024.0f, 230.0f / 1024.0f, 9.0f / 1024.0f, 54.0f / 1024.0f, 1.0f, false, -2.0f, -2.0f);
-		Bullets.push_back(laser);
+		SheetSprite bullet;
+		bullet.setAttributes(spriteSheetTexture, 858.0f / 1024.0f, 230.0f / 1024.0f, 9.0f / 1024.0f, 54.0f / 1024.0f, 1.0f, false, -2.0f, -2.0f);
+		Bullets.push_back(bullet);
 	}
     
 	for (int i = 0; i < 24; i++) {
@@ -101,8 +104,8 @@ void ClassDemoApp::YouShoot()
 		nBullets = 0;
 	}
 	Bullets[nBullets].isVisible = true;
-	Bullets[nBullets].x = ship.x;
-	Bullets[nBullets].y = ship.y + 0.1f;
+	Bullets[nBullets].x = p1.x;
+	Bullets[nBullets].y = p1.y + 0.1f;
 	nBullets++;
 }
 
@@ -133,8 +136,7 @@ void ClassDemoApp::Render()
 	}
     
 	if (gameState == 1) {
-		
-		ship.Draw();
+		p1.Draw();
         
 		for (SheetSprite e : Aliens) {
 			if (e.isVisible == true) {
@@ -211,10 +213,10 @@ void ClassDemoApp::Update(float elapsed)
     
 	if (gameState == 1) {
 		if (keys[SDL_SCANCODE_LEFT]) {
-			ship.x -= elapsed * 1.5;
+			alien.x -= elapsed * 1.5;
 		}
 		if (keys[SDL_SCANCODE_RIGHT]) {
-			ship.x += elapsed * 1.5;
+			alien.x += elapsed * 1.5;
 		}
         
 		for (SheetSprite &l : Bullets) {
@@ -264,12 +266,12 @@ void ClassDemoApp::Update(float elapsed)
 					score += 100;
 				}
 			}
-			if (isCollision(Aliens[i], ship)) {
+			if (isCollision(Aliens[i], alien)) {
 				gameState = 3;
 			}
 		}
 		for (int i = 0; i < AlienBullets.size(); i++) {
-			if (isCollision(ship, AlienBullets[i])){
+			if (isCollision(alien, AlienBullets[i])){
 				gameState = 3;
 			}
 		}

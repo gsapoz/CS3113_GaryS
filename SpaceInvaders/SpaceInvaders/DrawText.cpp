@@ -7,17 +7,18 @@
 //
 
 #include "DrawText.h"
-#include<vector>
+using namespace std;
 
-void DrawText::Draw(std::string text, float x, float y) {
+void DrawText::Draw(std::string text, float x, float y)
+{
 	glBindTexture(GL_TEXTURE_2D, font);
 	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	float texture_size = 1.0 / 16.0f;
-	std::vector<float> vertexData;
-	std::vector<float> texCoordData;
-	std::vector<float> colorData;
+	vector<float> vertexData;
+	vector<float> texCoordData;
+	vector<float> colorData;
 	for (int i = 0; i < text.size(); i++) {
 		float texture_x = (float)(((int)text[i]) % 16) / 16.0f;
 		float texture_y = (float)(((int)text[i]) / 16) / 16.0f;
