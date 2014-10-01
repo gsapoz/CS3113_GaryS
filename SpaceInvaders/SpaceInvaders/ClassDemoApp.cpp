@@ -8,18 +8,20 @@
 
 #include "ClassDemoApp.h" 
 
-ClassDemoApp::ClassDemoApp() {
+ClassDemoApp::ClassDemoApp() //constructor
+{
 	Init();
 	score = 0;
 	gameState = 0;
 	done = false;
 	lastShot = 5;
-	numLasers = 9;
-	numEnemyLasers = 23;
+	nBullets = 9;
+	nEnemyBullets = 23;
 	lastFrameTicks = 0.0f;
 }
 
-GLuint ClassDemoApp::LoadTexture(const char *image_path) {
+GLuint ClassDemoApp::LoadTexture(const char *image_path)
+{
 	SDL_Surface *surface = IMG_Load(image_path);
     
 	GLuint textureID;
@@ -35,7 +37,8 @@ GLuint ClassDemoApp::LoadTexture(const char *image_path) {
 	return textureID;
 }
 
-void ClassDemoApp::Init() {
+void ClassDemoApp::Init()
+{
 	SDL_Init(SDL_INIT_VIDEO);
 	displayWindow = SDL_CreateWindow("Space Invaders", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
 	SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
@@ -62,55 +65,60 @@ void ClassDemoApp::Init() {
 			xOrigin = -1.2;
 			yOrigin -= 0.2;
 		}
-		enemies.push_back(enemy);
+		Aliens.push_back(enemy);
 	}
     
 	for (int i = 0; i < 10; i++) {
 		SheetSprite laser;
 		laser.setAttributes(spriteSheetTexture, 858.0f / 1024.0f, 230.0f / 1024.0f, 9.0f / 1024.0f, 54.0f / 1024.0f, 1.0f, false, -2.0f, -2.0f);
-		lasers.push_back(laser);
+		Bullets.push_back(laser);
 	}
     
 	for (int i = 0; i < 24; i++) {
-		SheetSprite enemyLaser;
-		enemyLaser.setAttributes(spriteSheetTexture, 809.0f / 1024.0f, 437.0f / 1024.0f, 19.0f / 1024.0f, 30.0f / 1024.0f, 1.0f, false, -2.0f, -2.0f);
-		enemyLasers.push_back(enemyLaser);
+		SheetSprite alienBullets;
+		alienBullets.setAttributes(spriteSheetTexture, 809.0f / 1024.0f, 437.0f / 1024.0f, 19.0f / 1024.0f, 30.0f / 1024.0f, 1.0f, false, -2.0f, -2.0f);
+		AlienBullets.push_back(alienBullets);
+        AlienBullets.push_back(alienBullets);
 	}
     
-	writeScore.font = LoadTexture("font1.png");
-	writeScore.size = 0.1;
-	writeScore.spacing = -0.055;
-	writeScore.r = 0.0;
-	writeScore.g = 1.0;
-	writeScore.b = 0.0;
-	writeScore.a = 1.0;
+	WriteScore.font = LoadTexture("font1.png");
+	WriteScore.size = 0.1;
+	WriteScore.spacing = -0.055;
+	WriteScore.r = 0.0;
+	WriteScore.g = 1.0;
+	WriteScore.b = 0.0;
+	WriteScore.a = 1.0;
 }
 
-ClassDemoApp::~ClassDemoApp() {
+ClassDemoApp::~ClassDemoApp() //destructor
+{
 	SDL_Quit();
 }
 
-void ClassDemoApp::shootLaser() {
-	if (numLasers >= 9) {
-		numLasers = 0;
+void ClassDemoApp::YouShoot()
+{
+	if (nBullets >= 9) {
+		nBullets = 0;
 	}
-	lasers[numLasers].isVisible = true;
-	lasers[numLasers].x = ship.x;
-	lasers[numLasers].y = ship.y + 0.1f;
-	numLasers++;
+	Bullets[nBullets].isVisible = true;
+	Bullets[nBullets].x = ship.x;
+	Bullets[nBullets].y = ship.y + 0.1f;
+	nBullets++;
 }
 
-void ClassDemoApp::shootEnemyLaser() {
-	numEnemyLasers = rand() % 24;
-	if (enemies[numEnemyLasers].isVisible) {
-		enemyLasers[numEnemyLasers].isVisible = true;
-		enemyLasers[numEnemyLasers].x = enemies[numEnemyLasers].x;
-		enemyLasers[numEnemyLasers].y = enemies[numEnemyLasers].y - 0.1f;
+void ClassDemoApp::AlienShoots()
+{
+	nEnemyBullets = rand() % 24;
+	if (Aliens[nEnemyBullets].isVisible) {
+		AlienBullets[nEnemyBullets].isVisible = true;
+		AlienBullets[nEnemyBullets].x = Aliens[nEnemyBullets].x;
+		AlienBullets[nEnemyBullets].y = Aliens[nEnemyBullets].y - 0.1f;
 	}
-	srand(time(NULL));
+	srand(static_cast<unsigned int>(time(NULL)));
 }
 
-void ClassDemoApp::Render() {
+void ClassDemoApp::Render()
+{
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
     
@@ -119,54 +127,51 @@ void ClassDemoApp::Render() {
 	glLoadIdentity();
     
 	if (gameState == 0) {
-		writeScore.Draw("Attention, Spaceman Spiff.", -1.0, 0.7);
-		writeScore.Draw("There is an alien force approaching your location.", -1.0, 0.5);
-		writeScore.Draw("You must defeat them all to survive", -1.0, 0.3);
-		writeScore.Draw("Good luck.", -1.0, 0.1);
-		writeScore.Draw("Press Enter to begin.", -1.0, -0.7);
+		WriteScore.Draw("Aliens are approaching!", -1.0, 0.5);
+		WriteScore.Draw("Kill them all!", -1.0, 0.3);
+		WriteScore.Draw("Press Enter to begin.", -1.0, -0.7);
 	}
     
 	if (gameState == 1) {
 		
 		ship.Draw();
         
-		for (SheetSprite e : enemies) {
+		for (SheetSprite e : Aliens) {
 			if (e.isVisible == true) {
 				e.Draw();
 			}
 		}
         
-		for (SheetSprite l : lasers) {
+		for (SheetSprite l : Bullets) {
 			if (l.isVisible == true) {
 				l.Draw();
 			}
 		}
         
-		for (SheetSprite el : enemyLasers) {
+		for (SheetSprite el : Bullets) {
 			if (el.isVisible == true) {
 				el.Draw();
 			}
 		}
 		
 		std::string scoreString = std::to_string(score);
-		writeScore.Draw(scoreString, -1.2, 0.9);
+		WriteScore.Draw(scoreString, -1.2, 0.9);
         
 	}
     
 	if (gameState == 2) {
-		writeScore.Draw("Congratulations, Spiff.", -1.0f, 0.3f);
-		writeScore.Draw("Now that the aliens are dead,", -1.0f, 0.1f);
-		writeScore.Draw("the space station is safe.", -1.0f, -0.1f);
+		WriteScore.Draw("Congratulations! You Win!", -1.0f, 0.3f);
 	}
     
 	if (gameState == 3) {
-		writeScore.Draw("You have failed.", -1.0f, 0.0f);
+		WriteScore.Draw("GAME OVER", -1.0f, 0.0f);
 	}
     
 	SDL_GL_SwapWindow(displayWindow);
 }
 
-bool isCollision(SheetSprite laser, SheetSprite vessel) {
+bool isCollision(SheetSprite laser, SheetSprite vessel) //its a hit!
+{
 	if (laser.isVisible == true && vessel.isVisible == true) {
 		if (((vessel.y - laser.y) < (vessel.height / 1.75 + laser.height / 1.75) && (vessel.y - vessel.height / 1.75) < (laser.y + laser.height / 1.75)
              && (vessel.y + vessel.height / 1.75) > (laser.y - laser.height / 1.75) && (vessel.x - laser.x) < (vessel.width / 1.75 + laser.width / 1.75)
@@ -178,8 +183,8 @@ bool isCollision(SheetSprite laser, SheetSprite vessel) {
 	} return false;
 }
 
-void ClassDemoApp::Update(float elapsed) {
-    
+void ClassDemoApp::Update(float elapsed)
+{
 	SDL_Event event;
     
 	const Uint8 *keys = SDL_GetKeyboardState(NULL);
@@ -191,7 +196,7 @@ void ClassDemoApp::Update(float elapsed) {
         
 		if (event.key.keysym.scancode == SDL_SCANCODE_SPACE) {
 			if (lastShot >= 10) {
-				shootLaser();
+				YouShoot();
 				lastShot = 0;
 			}
 		}
@@ -212,7 +217,7 @@ void ClassDemoApp::Update(float elapsed) {
 			ship.x += elapsed * 1.5;
 		}
         
-		for (SheetSprite &l : lasers) {
+		for (SheetSprite &l : Bullets) {
 			if (l.isVisible == true) {
 				l.y += elapsed;
                 
@@ -223,7 +228,7 @@ void ClassDemoApp::Update(float elapsed) {
 			}
 		}
         
-		for (SheetSprite &el : enemyLasers) {
+		for (SheetSprite &el : AlienBullets) {
 			el.y -= elapsed;
             
             //el.timeAlive += elapsed;
@@ -234,37 +239,37 @@ void ClassDemoApp::Update(float elapsed) {
 		}
         
 		bool hasEnemies = false;
-		for (int i = 0; i < enemies.size(); i++) {
-			if (enemies[i].isVisible) {
+		for (int i = 0; i < Aliens.size(); i++) {
+			if (Aliens[i].isVisible) {
 				hasEnemies = true;
 				if (rand() % 2 == 1) {
-					shootEnemyLaser();
+					AlienShoots();
 				}
 			}
-			srand(time(NULL));
+			srand(static_cast<unsigned int>(time(NULL)));
             
-			enemies[i].x += elapsed * 0.5 * enemies[i].direction;
-			if (((enemies[i].x > 1.2) && (enemies[i].isVisible)) || ((enemies[i].x < -1.2) && (enemies[i].isVisible)))
+			Aliens[i].x += elapsed * 0.5 * Aliens[i].direction;
+			if (((Aliens[i].x > 1.2) && (Aliens[i].isVisible)) || ((Aliens[i].x < -1.2) && (Aliens[i].isVisible)))
             {
-				for (int j = 0; j < enemies.size(); j++) {
-					enemies[j].x += .01 * -1 * enemies[j].direction;
-					enemies[j].direction *= -1;
-					enemies[j].y -= 0.075f;
+				for (int j = 0; j < Aliens.size(); j++) {
+					Aliens[j].x += .01 * -1 * Aliens[j].direction;
+					Aliens[j].direction *= -1;
+					Aliens[j].y -= 0.075f;
 				}
 			}
-			for (int k = 0; k < lasers.size(); k++) {
-				if (isCollision(lasers[k], enemies[i])) {
-					enemies[i].isVisible = false;
-					lasers[k].isVisible = false;
+			for (int k = 0; k < Bullets.size(); k++) {
+				if (isCollision(Bullets[k], Aliens[i])) {
+                    Aliens[i].isVisible = false;
+					Bullets[k].isVisible = false;
 					score += 100;
 				}
 			}
-			if (isCollision(enemies[i], ship)) {
+			if (isCollision(Aliens[i], ship)) {
 				gameState = 3;
 			}
 		}
-		for (int i = 0; i < enemyLasers.size(); i++) {
-			if (isCollision(ship, enemyLasers[i])){
+		for (int i = 0; i < AlienBullets.size(); i++) {
+			if (isCollision(ship, AlienBullets[i])){
 				gameState = 3;
 			}
 		}
@@ -274,7 +279,8 @@ void ClassDemoApp::Update(float elapsed) {
 	}
 }
 
-bool ClassDemoApp::UpdateAndRender() {
+bool ClassDemoApp::UpdateAndRender()
+{
 	float ticks = (float)SDL_GetTicks() / 1000.0f;
 	float elapsed = ticks - lastFrameTicks;
 	lastFrameTicks = ticks;

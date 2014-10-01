@@ -12,43 +12,37 @@
 #include<SDL2/SDL.h>
 #include<SDL2_image/SDL_image.h>
 #include<SDL2/SDL_opengl.h>
+
 #include<vector>
 #include "SheetSprite.h"
 #include "DrawText.h"
 
-class ClassDemoApp {
-public:
-    
-	ClassDemoApp();
-	~ClassDemoApp();
-    
-	GLuint LoadTexture(const char *image_path);
-	void Init();
-	bool UpdateAndRender();
-    
-	void shootLaser();
-	void shootEnemyLaser();
-    
-	void Render();
-	void Update(float elapsed);
-    
-private:
-	SheetSprite ship;
+class ClassDemoApp
+{
+    SheetSprite ship;
 	SheetSprite enemy1;
-	std::vector<SheetSprite> lasers;
-	std::vector<SheetSprite> enemyLasers;
-	std::vector<SheetSprite> enemies;
-    
-	int numLasers;
-	int numEnemyLasers;
+	std::vector<SheetSprite> Bullets;
+	std::vector<SheetSprite> AlienBullets;
+	std::vector<SheetSprite> Aliens;
+    int nBullets;
+	int nEnemyBullets;
 	int lastShot;
-	int score;
-	DrawText writeScore;
-    
+    int score;
+	DrawText WriteScore;
 	int gameState;
 	bool done;
 	float lastFrameTicks;
-	SDL_Window* displayWindow;
+    SDL_Window* displayWindow;
+public:
+	ClassDemoApp();
+	~ClassDemoApp();
+	GLuint LoadTexture(const char *image_path);
+	void Init();
+	bool UpdateAndRender();
+	void YouShoot();
+	void AlienShoots();
+	void Render();
+	void Update(float elapsed);
 };
 
 #endif /* defined(__SpaceInvaders__Game__) */

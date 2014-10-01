@@ -13,8 +13,8 @@
 #include<SDL2_image/SDL_image.h>
 #include<SDL2/SDL_opengl.h>
 
-class SheetSprite {
-public:
+struct SheetSprite
+{
 	SheetSprite() {
 		timeAlive = 0.0;
 	}

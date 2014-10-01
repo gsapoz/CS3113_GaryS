@@ -7,7 +7,8 @@
 //
 
 #include "SheetSprite.h"
-void SheetSprite::setAttributes(unsigned int t, float u_, float v_, float w, float h, float s, bool vis, float x_, float y_) {
+void SheetSprite::setAttributes(unsigned int t, float u_, float v_, float w, float h, float s, bool vis, float x_, float y_)
+{
 	textureID = t;
 	u = u_;
 	v = v_;
@@ -19,7 +20,8 @@ void SheetSprite::setAttributes(unsigned int t, float u_, float v_, float w, flo
 	y = y_;
 }
 
-void SheetSprite::Draw() {
+void SheetSprite::Draw()
+{
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, textureID);
     
@@ -41,7 +43,8 @@ void SheetSprite::Draw() {
 	glDisable(GL_TEXTURE_2D);
 }
 
-void SheetSprite::setPosition(float xTemp, float yTemp) {
+void SheetSprite::setPosition(float xTemp, float yTemp)
+{
 	x = xTemp;
 	y = yTemp;
 }

@@ -14,8 +14,8 @@
 #include<SDL2/SDL_opengl.h>
 #include <string>
 
-class DrawText {
-public:
+struct DrawText
+{
 	//void Draw(float x, float y);
 	void Draw(std::string text, float x, float y);
     

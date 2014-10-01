@@ -14,7 +14,8 @@
 #include<SDL2/SDL_opengl.h>
 
 
-struct Entity {
+struct Entity
+{
     void Draw();
     void DrawSpriteSheetSprite(int spriteTexture, int index, int spriteCountX, int spriteCountY);
     void setSize(float w, float h);

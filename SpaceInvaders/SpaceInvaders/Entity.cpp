@@ -34,7 +34,8 @@ void Entity::Draw()
     glDisable(GL_TEXTURE_2D);
 }
     
-void Entity::DrawSpriteSheetSprite(int spriteTexture, int index, int spriteCountX, int spriteCountY) {
+void Entity::DrawSpriteSheetSprite(int spriteTexture, int index, int spriteCountX, int spriteCountY)
+{
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, textureID);
         
@@ -64,16 +65,19 @@ void Entity::DrawSpriteSheetSprite(int spriteTexture, int index, int spriteCount
     glDisable(GL_TEXTURE_2D);
         
 }
-void Entity::setSize(float w, float h) {
+void Entity::setSize(float w, float h)
+{
     width = w;
     height = h;
 }
-void Entity::setPosition(float xTemp, float yTemp, float r) {
+void Entity::setPosition(float xTemp, float yTemp, float r)
+{
     x = xTemp;
     y = yTemp;
     rotation = r;
 }
-void Entity::setMovement(float s, float a) {
+void Entity::setMovement(float s, float a)
+{
     speed = s;
     angle = a;
 }
