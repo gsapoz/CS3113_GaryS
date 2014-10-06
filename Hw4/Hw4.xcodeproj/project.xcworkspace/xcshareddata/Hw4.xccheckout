@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>12B2D5BA-D5C6-4675-9839-4E27FEE3CD00</string>
+	<string>53208A05-F4FF-4BD7-8B15-8FB8AE2E1A5E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SpaceInvaders</string>
+	<string>Hw4</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A2EE0CF8D1C6E8B20D18365BBC8B5C7F509FAC67</key>
 		<string>https://github.com/gsapoz/cs3113_garys</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SpaceInvaders/SpaceInvaders/SpaceInvaders.xcodeproj/project.xcworkspace</string>
+	<string>Hw4/Hw4.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A2EE0CF8D1C6E8B20D18365BBC8B5C7F509FAC67</key>
-		<string>../../../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/gsapoz/cs3113_garys</string>
