@@ -12,20 +12,24 @@
 	<dict>
 		<key>87B8BDFD3B7109C7EE5C9A42582B5A75074E57CC</key>
 		<string>https://github.com/ivansafrin/CS3113</string>
+		<key>A2EE0CF8D1C6E8B20D18365BBC8B5C7F509FAC67</key>
+		<string>https://github.com/gsapoz/cs3113_garys</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>project_template/Xcode/NYUCodebase.xcodeproj</string>
+	<string>Hw4 /NYUCodebase.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>87B8BDFD3B7109C7EE5C9A42582B5A75074E57CC</key>
-		<string>../../../..</string>
+		<string>../../../../CS3113</string>
+		<key>A2EE0CF8D1C6E8B20D18365BBC8B5C7F509FAC67</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ivansafrin/CS3113</string>
+	<string>https://github.com/gsapoz/cs3113_garys</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>87B8BDFD3B7109C7EE5C9A42582B5A75074E57CC</string>
+	<string>A2EE0CF8D1C6E8B20D18365BBC8B5C7F509FAC67</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>87B8BDFD3B7109C7EE5C9A42582B5A75074E57CC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CS3113</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A2EE0CF8D1C6E8B20D18365BBC8B5C7F509FAC67</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cs3113_garys</string>
 		</dict>
 	</array>
 </dict>

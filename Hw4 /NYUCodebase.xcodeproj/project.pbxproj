@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		067DFDD319E3790900D6F670 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 067DFDD119E3790900D6F670 /* Bullet.cpp */; };
+		067DFDD619E3791C00D6F670 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 067DFDD419E3791C00D6F670 /* Entity.cpp */; };
+		067DFDE319E3905300D6F670 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 067DFDE119E3905300D6F670 /* App.cpp */; };
 		6D5A86AE19AE5C710066C1FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5A86AD19AE5C710066C1FD /* Cocoa.framework */; };
 		6D5A86B819AE5C710066C1FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D5A86B619AE5C710066C1FD /* InfoPlist.strings */; };
 		6D5A86BA19AE5C710066C1FD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D5A86B919AE5C710066C1FD /* main.cpp */; };
@@ -32,6 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		067DFDD119E3790900D6F670 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		067DFDD219E3790900D6F670 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		067DFDD419E3791C00D6F670 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		067DFDD519E3791C00D6F670 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		067DFDD719E3793A00D6F670 /* SheetSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SheetSprite.cpp; sourceTree = "<group>"; };
+		067DFDD819E3793A00D6F670 /* SheetSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetSprite.h; sourceTree = "<group>"; };
+		067DFDE119E3905300D6F670 /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
+		067DFDE219E3905300D6F670 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		6D5A86AA19AE5C710066C1FD /* NYUCodebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYUCodebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5A86AD19AE5C710066C1FD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6D5A86B019AE5C710066C1FD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -160,6 +171,14 @@
 			isa = PBXGroup;
 			children = (
 				6D5A86B919AE5C710066C1FD /* main.cpp */,
+				067DFDD119E3790900D6F670 /* Bullet.cpp */,
+				067DFDD219E3790900D6F670 /* Bullet.h */,
+				067DFDD419E3791C00D6F670 /* Entity.cpp */,
+				067DFDD519E3791C00D6F670 /* Entity.h */,
+				067DFDD719E3793A00D6F670 /* SheetSprite.cpp */,
+				067DFDD819E3793A00D6F670 /* SheetSprite.h */,
+				067DFDE119E3905300D6F670 /* App.cpp */,
+				067DFDE219E3905300D6F670 /* App.h */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -263,6 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D5A86BA19AE5C710066C1FD /* main.cpp in Sources */,
+				067DFDD619E3791C00D6F670 /* Entity.cpp in Sources */,
+				067DFDD319E3790900D6F670 /* Bullet.cpp in Sources */,
+				067DFDE319E3905300D6F670 /* App.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
