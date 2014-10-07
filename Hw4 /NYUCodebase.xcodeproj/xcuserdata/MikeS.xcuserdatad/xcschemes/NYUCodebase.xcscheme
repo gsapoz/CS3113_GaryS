@@ -58,10 +58,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <PathRunnable
-         FilePath = "/Users/MikeS/Library/Developer/Xcode/DerivedData/NYUCodebase-focolhuomlfdcgcfbkueufvewxte/Build/Products/Debug/NYUCodebase.app">
-      </PathRunnable>
-      <MacroExpansion>
+      <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D5A86A919AE5C710066C1FD"
@@ -69,7 +66,7 @@
             BlueprintName = "NYUCodebase"
             ReferencedContainer = "container:NYUCodebase.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

@@ -16,7 +16,7 @@ class Entity
 {  
 public:
     Entity();
-    ~Entity();
+    
     void Update(float elapsed);
     void Render();
     

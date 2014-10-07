@@ -45,13 +45,11 @@ public:
     ~App();
     void Init();
     void Update(float elapsed);
-    //void FixedUpdate();
     void Render();
     bool UpdateAndRender();
     void buildLevel();
     void shootBullet();
 };
-//float lerp(float v0, float v1, float t);
 
 #endif /* defined(__NYUCodebase__App__) */
 

@@ -20,7 +20,6 @@ public:
     void Render();
     
     float visible;
-    void FixedUpdate();
     
     SheetSprite sprite;
     

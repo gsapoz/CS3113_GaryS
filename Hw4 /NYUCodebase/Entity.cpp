@@ -29,13 +29,10 @@ Entity::Entity() {
 
 }
 
-Entity::~Entity()
-{
-    delete this;
-}
 void Entity::Update(float elapsed){}
 
-void Entity::Render() {
+void Entity::Render()
+{
     sprite.Draw(width, height, x, y);
 }
 

@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Ivan Safrin. All rights reserved.
 //
 
+
 #include "App.h"
+
 App::App()
 {
     Init();
@@ -23,15 +25,14 @@ App::App()
     
     characterTexture = LoadTexture("george_0.png");
     
-    //make some afjustments here pl0x
     SheetSprite playerSprite = SheetSprite(characterTexture, 12, 8, 15);
-    player = new Entity();
-    player->sprite = playerSprite;
-    player->y = -0.5f;
-    player->width = 0.2f;
-    player->height = 0.2f;
-    player->friction_x = 3.0f;
-    entities.push_back(player);
+    Entity player;
+    player.sprite = playerSprite;
+    player.y = -0.5f;
+    player.width = 0.2f;
+    player.height = 0.2f;
+    player.friction_x = 3.0f;
+    entities.push_back(&player);
     
 }
 
@@ -90,8 +91,6 @@ void App::Render()
     for (size_t i = 0; i < 30; i++) {
         bullets[i].Render();
     }
-    
-    
     SDL_GL_SwapWindow(displayWindow);
 }
 
@@ -139,17 +138,6 @@ bool App::UpdateAndRender()
             shootBullet();
         }
     }
-    /*
-    float fixedElapsed = elapsed + timeLeftOver;
-    if (fixedElapsed > 0.0166666f * 6) {
-        fixedElapsed = 0.0166666f * 6;
-    }
-    while (fixedElapsed >= 0.0166666f) {
-        fixedElapsed -= 0.0166666f;
-        FixedUpdate();
-    }
-    timeLeftOver = fixedElapsed;
-    */
     Update(elapsed);
     Render();
     return done;
@@ -170,7 +158,6 @@ void App::buildLevel()
         entities.push_back(&bricks[brickIndex]);
         brickIndex++;
     }
-    
     brickSprite = SheetSprite(brickTexture, 14, 8, 27);
     for (float i = -0.4f; i <= 1.0f; i = i + 0.2f) {
         bricks[brickIndex].sprite = brickSprite;
@@ -247,9 +234,6 @@ void App::shootBullet()
     shootTimer = 0;
 }
 
-float lerp(float v0, float v1, float t) {
-    return (1.0f - t)*v0 + t*v1;
-}
 
 
 
